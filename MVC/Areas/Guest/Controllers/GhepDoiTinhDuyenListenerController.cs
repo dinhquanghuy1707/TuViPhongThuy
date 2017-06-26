@@ -45,7 +45,7 @@ namespace MVC.Areas.Guest.Controllers
                 client_secret = "eab1b4dd9956001f52bd54229aea61c1",
                 redirect_uri = RedirectUri.AbsoluteUri,
                 response_type = "code",
-                scope = "email, user_about_me, user_birthday, publish_actions,read_custom_friendlists"
+                scope = "email, user_about_me, user_birthday,read_custom_friendlists"
             });
             return Redirect(loginUrl.AbsoluteUri);
         }
@@ -83,8 +83,8 @@ namespace MVC.Areas.Guest.Controllers
             dynamic result = fb.Post("oauth/access_token", new
             {
 
-                client_id = "330468244019948",
-                client_secret = "2f2a59b2ffe2cd338d81b608bf0ef923",
+                client_id = "1567232153295149",
+                client_secret = "eab1b4dd9956001f52bd54229aea61c1",
                 redirect_uri = RedirectUri.AbsoluteUri,
                 code = code
             });
@@ -215,28 +215,30 @@ namespace MVC.Areas.Guest.Controllers
             var Pos = new GhepDoiTinhDuyenPost();
             //
             Res = db.GhepDoiTinhDuyenResults.Where(s => s.IdResult == IdRes).FirstOrDefault();
-            string nameobj2 = Res.Name;
-            string dtt2 = Res.Birthday;
-            string gender2 = "Nữ";
-            if (Res.Gender == true) gender2 = "Nam";
-            string idfb2 = Res.IdFb;
-            string image2 = Res.Image;
+            string nameobj1 = Res.Name;
+            string dtt1 = Res.Birthday;
+            string gender1 = "Nữ";
+            if (Res.Gender == true) gender1 = "Nam";
+            string idfb1 = Res.IdFb;
+            string image1 = Res.Image;
             string IdPost = Res.IdPost;
             //
+
+
             Pos = db.GhepDoiTinhDuyenPosts.Where(s => s.IdPost == IdPost).FirstOrDefault();
-            string nameobj1 = Pos.Name;
-            string dtt1 = Pos.Birthday;
-            string gender1 = "Nữ";
-            if (Pos.Gender == true) gender1 = "Nam";
-            string idfb1 = Pos.IdFB;
-            string image1 = Pos.Image;
+            string nameobj2 = Pos.Name;
+            string dtt2 = Pos.Birthday;
+            string gender2 = "Nữ";
+            if (Pos.Gender == true) gender2 = "Nam";
+            string idfb2 = Pos.IdFB;
+            string image2 = Pos.Image;
             double Point = 0.0;
             ViewBag.IdRes = IdRes;
             ViewBag.url= "http://tuvigiadao.com/Guest/GhepDoiTinhDuyenListener/result?IdRes="+IdRes;
 
             //string objID = TempData["fid"].ToString();
-            //ViewBag.tentoi = TempData["tentoi"];
-            //ViewBag.tennguoiay = TempData["tennguoiay"];
+            ViewBag.tentoi = nameobj1;
+            ViewBag.tennguoiay = nameobj2;
             //ViewBag.anhtoi = TempData["myPic"];
             //ViewBag.anhnguoiay = TempData["objPic"];
             ///////////////////////////////
@@ -549,7 +551,7 @@ namespace MVC.Areas.Guest.Controllers
                     }
                 }
             }
-            
+            ViewBag.decription = nameobj2 + " và " + nameobj1 + "hợp nhau " + Point + "/10 - còn bạn thì sao ? - Xem Bói Tính Duyên";
           
 
 

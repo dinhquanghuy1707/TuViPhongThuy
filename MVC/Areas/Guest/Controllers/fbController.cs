@@ -27,8 +27,8 @@ namespace MVC.Areas.Guest.Controllers
 
             var loginUrl = fb.GetLoginUrl(new
             {
-                client_id = "330468244019948",
-                client_secret = "2f2a59b2ffe2cd338d81b608bf0ef923",
+                client_id = "1567232153295149",
+                client_secret = "eab1b4dd9956001f52bd54229aea61c1",
                 redirect_uri = RedirectUri.AbsoluteUri,
                 response_type = "code",
                 scope = "email, user_about_me, user_birthday, publish_actions",
@@ -130,8 +130,8 @@ namespace MVC.Areas.Guest.Controllers
           //  string nameValues = "sss";
             dynamic result = fb.Post("oauth/access_token", new
             {
-                client_id = "330468244019948",
-                client_secret = "2f2a59b2ffe2cd338d81b608bf0ef923",
+                client_id = "1567232153295149",
+                client_secret = "eab1b4dd9956001f52bd54229aea61c1",
                 redirect_uri = RedirectUri.AbsoluteUri,
                 code = code
             });

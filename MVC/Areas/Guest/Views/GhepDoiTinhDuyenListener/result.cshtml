@@ -198,54 +198,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         <td>@ViewBag.Tuoi</td>
                                         <td><span style="color: red">@ViewBag.DiemTuoi</span> /2</td>
                                     </tr>
-                                </table>
-                                <form action="~/Guest/fb/shareTD" method="post">
-
-                                    <input type="hidden" name="namsinh1" value="@ViewBag.day1 tháng @ViewBag.month1 năm @ViewBag.namAL1">
-
-                                    <input type="hidden" name="gioitinh1" value="@ViewBag.gender1">
-
-                                    <input type="hidden" name="menh1" value="@ViewBag.Menh1">
-
-                                    <input type="hidden" name="giainghia1" value="@ViewBag.GiaiNghia1">
-
-                                    <input type="hidden" name="cungmenh1" value="@ViewBag.CungMenh1">
-
-                                    <input type="hidden" name="nienmenh1" value="@ViewBag.NienMenh1">
-
-                                    <input type="hidden" name="tutrach1" value="@ViewBag.TuTrach1">
-
-                                    <input type="hidden" name="namsinh2" value="@ViewBag.day2 tháng @ViewBag.month2 năm @ViewBag.namAL2">
-
-                                    <input type="hidden" name="gioitinh2" value="@ViewBag.gender2">
-
-                                    <input type="hidden" name="menh2" value="@ViewBag.Menh2">
-
-                                    <input type="hidden" name="giainghia2" value="@ViewBag.GiaiNghia2">
-
-                                    <input type="hidden" name="cungmenh2" value="@ViewBag.CungMenh2">
-
-                                    <input type="hidden" name="nienmenh2" value="@ViewBag.NienMenh2">
-
-                                    <input type="hidden" name="tutrach2" value="@ViewBag.TuTrach2">
-
-                                    <input type="hidden" name="diemnguhanh" value="@ViewBag.DiemNguHanh">
-
-                                    <input type="hidden" name="diemtutrach" value="@ViewBag.DiemTuTrach">
-                                    <input type="hidden" name="chenhlech" value="@ViewBag.ChenhLech">
-                                    <input type="hidden" name="diemtuoi" value="@ViewBag.DiemTuoi">
-                                    <input type="hidden" name="diem" value="@ViewBag.Point">
-                                    <center>
-                                        <div class="fb-share-button"
-                                             data-href="@ViewBag.url"
-                                             data-layout="button"
-                                             data-size="large"  
-                                             data-mobile-iframe="true"
-                                             title="Send To Facebook !"
-                                             redirect_uri="http://tuvigiadao.com/Guest/GhepDoiTinhDuyen/Index">
-                                        </div>
-                                    </center>
-                                </form>
+                                </table>                           
                             </div>
                             <div id="tuoidep" class="collapse">
                                     <br />
@@ -274,6 +227,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         </tbody>
                                     </table>
                                 </div>
+                            <center>
+                                <div class="fb-share-button"
+                                     data-href="@ViewBag.url"
+                                     data-layout="button"
+                                     data-size="large"
+                                     data-mobile-iframe="true"
+                                     title="Send To Facebook !"
+                                     redirect_uri="http://tuvigiadao.com/Guest/GhepDoiTinhDuyen/Index">
+                                </div>
+                            </center>
                         </div>
                     </div>
                 </div>
