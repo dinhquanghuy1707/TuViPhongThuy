@@ -1,0 +1,309 @@
+﻿<!DOCTYPE HTML>
+@model IEnumerable<MVC.Areas.Guest.Controllers.person>
+    @{
+        ViewBag.Title = "test";
+        Layout = null;
+    }
+
+    
+    <html>
+    <head>
+
+
+
+
+
+
+
+
+
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <meta name="keywords" content="Business_Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+
+        <title>Tử Vi Gia Đạo</title>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+        <meta name="description" content="@ViewBag.description">
+        <meta property="article:publisher" content="https://www.facebook.com/tuvigiadao">
+        <meta property="article:tag" content="phongthuy">
+        <meta property="article:published_time" content="2017-06-02T16:14:59+00:00">
+        <meta property="article:author" content="https://www.facebook.com/tuvigiadao">
+
+        <meta property="fb:app_id" content="1567232153295149">
+        <meta property="fb:pages" content="1183389758392844">
+        <meta property="og:site_name" content="Tuvigidao">
+        <meta property="og:description" content="@ViewBag.description">
+        <meta property="og:title" content="Tử Vi Gia Đạo - Tử Vi Tình Yêu">
+
+        <meta property="og:url" content="@ViewBag.url">
+        <meta property="og:image" content="http://tuvigiadao.com/Assets/Homepage/images/BoiTinhYeu/@ViewBag.Image">
+        @*<meta property="og:image:height" content="512">*@
+        <meta property="og:type" content="article">
+        @*<meta property="og:image:width" content="512">*@
+        <meta property="og:image:type" content="image/jpeg">
+
+
+
+
+        <script type="applijewelleryion/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+        <link href="/Assets/Homepage/css/bootstrap.css" rel='stylesheet' type='text/css' />
+        <!-- Custom Theme files -->
+        <link href="~/Assets/Homepage/css/bootstrap-social.css" rel="stylesheet" />
+        <link href='/Assets/Homepage/fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
+        <link href='/Assets/Homepage/fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link href="/Assets/Homepage/css/style.css" rel='stylesheet' type='text/css' />
+        <script src="/Assets/Homepage/js/jquery-1.11.1.min.js"></script>
+        <script src="/Assets/Homepage/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <!--start-main-->
+        <div class="header">
+            <div class="header-top">
+                <div class="container">
+                    <div class="logo">
+                        <a href="~/Guest/Home/Index"><h1>TỬ VI GIA ĐẠO</h1></a>
+                    </div>
+                    <div class="search">
+                        <form role="form" action="~/Guest/TaiLieu/Search" method="get">
+                            <input type="text" value="Search" name="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+                            <input type="submit" value="">
+                        </form>
+                    </div>
+                    <div class="social">
+                        <ul>
+                            <li><a href="#" class="facebook"> </a></li>
+                            <li><a href="#" class="facebook twitter"> </a></li>
+                            <li><a href="#" class="facebook chrome"> </a></li>
+                            <li><a href="#" class="facebook in"> </a></li>
+                            <li><a href="#" class="facebook beh"> </a></li>
+                            <li><a href="#" class="facebook vem"> </a></li>
+                            <li><a href="#" class="facebook yout"> </a></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <!--head-bottom-->
+            <div class="head-bottom">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="~/Guest/Home/Index">TRANG CHỦ</a></li>
+                            <li><a href="~/Guest/XemPhongThuy/Index">HƯỚNG NHÀ</a></li>
+                            <li class="active"><a href="~/Guest/TinhDuyen/Index">TÌNH DUYÊN</a></li>
+                            <li><a href="~/Guest/LichAmDuong/Index">LỊCH ÂM DƯƠNG</a></li>
+                            <li><a href="~/Guest/TaiLieu/Index">TÀI LIỆU PHONG THỦY</a></li>
+                            <li><a href="~/Guest/GioiThieu/Index">GIỚI THIỆU</a></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+            <!--head-bottom-->
+        </div>
+        <!-- banner -->
+        <div class="technology-1">
+            <div class="container">
+                <div class="business">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            @*<div class="imgcontainer">
+                                    <img class="img-rounded" src="\Assets\Homepage\images\TinhDuyen.jpg">
+                                    <div class="textcenter">@ViewBag.NhanXet</div>
+                                    <div class="center">@ViewBag.Point/10</div>
+                                </div>*@
+                         
+                            <img src='/Assets/Homepage/images/BoiTinhYeu/@ViewBag.Image' />
+
+                        </div>
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="col-lg-4">
+                                <button type="button" data-toggle="collapse" data-target="#detail" class="btn btn-primary btn-block">XEM CHÚ GIẢI</button>
+                            </div>
+                            <div class="col-lg-4">
+                                <button type="button" data-toggle="collapse" data-target="#tuoidep" class="btn btn-primary btn-block">GỢI Ý TUỔI ĐẸP</button>
+                            </div>
+                            <div class="col-lg-4">
+                                <button type="button" data-toggle="collapse" data-target="#" class="btn btn-primary btn-block">XEM TUỔI BẠN BÈ</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div id="detail" class="collapse">
+                                <br />
+                                <center><h3>THÔNG TIN HAI BẠN</h3></center>
+
+                                <table class="table table-bordered ">
+                                    <thead>
+                                        <tr>
+                                            <th><h3><span class="label label-primary">Thông tin bạn</span></h3></th>
+                                            <th><h3><span class="label label-primary">Thông tin người ấy</span></h3></th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                Năm Sinh:       @ViewBag.day1 tháng @ViewBag.month1 năm @ViewBag.namAL1 <br>
+                                                Giới Tính:      @ViewBag.gender1 <br>
+                                                Ngũ Hành:       @ViewBag.Menh1<br>
+                                                Giải Nghĩa:     @ViewBag.GiaiNghia1<br>
+                                                Cung:           @ViewBag.CungMenh1<br>
+                                                Niên Mệnh:      @ViewBag.NienMenh1<br>
+                                                Tứ Trạch:       @ViewBag.TuTrach1<br>
+                                            </td>
+                                            <td>
+                                                Năm Sinh: @ViewBag.day2 tháng @ViewBag.month2 năm @ViewBag.namAL2 <br>
+                                                Giới Tính: @ViewBag.gender2<br>
+                                                Ngũ Hành: @ViewBag.Menh2<br>
+                                                Giải Nghĩa: @ViewBag.GiaiNghia2<br>
+                                                Cung: @ViewBag.CungMenh2<br>
+                                                Niên Mệnh: @ViewBag.NienMenh2<br>
+                                                Tứ Trạch: @ViewBag.TuTrach2<br>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <center><h3>CHÚ GIẢI</h3></center>
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <th>Yếu Tố</th>
+                                        <th>Thông Tin</th>
+                                        <th>Mức Độ</th>
+                                        <th>Điểm</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Ngũ Hành</td>
+                                        <td><span style="color:blue"> @ViewBag.Menh1 - @ViewBag.Menh2</span></td>
+                                        <td>@ViewBag.NguHanh</td>
+                                        <td><span style="color: red">@ViewBag.DiemNguHanh</span> /5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tứ Trạch</td>
+                                        <td><span style="color:blue">@ViewBag.TuTrach1 - @ViewBag.TuTrach2</span></td>
+                                        <td>@ViewBag.TuTrach</td>
+                                        <td><span style="color: red; ">@ViewBag.DiemTuTrach</span> /3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chênh Lệch Tuổi</td>
+                                        <td><span style="color: blue">@ViewBag.namAL1 - @ViewBag.namAL2 </span> hai bạn chênh lệch<span style="color:blue"> @ViewBag.ChenhLech Tuổi </span> </td>
+                                        <td>@ViewBag.Tuoi</td>
+                                        <td><span style="color: red">@ViewBag.DiemTuoi</span> /2</td>
+                                    </tr>
+                                </table>
+                                <br />
+                                <center>
+                                    <div class="fb-share-button"
+                                         data-href="@ViewBag.url"
+                                         data-layout="button"
+                                         data-size="large"
+                                         data-mobile-iframe="true"
+                                         title="Send To Facebook !"
+                                         redirect_uri="http://tuvigiadao.com/Guest/TinhDuyen/Index">
+                                    </div>
+                                </center>
+                                <br />
+                                <form action="~/Guest/fb/shareTD" method="post">
+
+                                    <input type="hidden" name="namsinh1" value="@ViewBag.day1 tháng @ViewBag.month1 năm @ViewBag.namAL1">
+
+                                    <input type="hidden" name="gioitinh1" value="@ViewBag.gender1">
+
+                                    <input type="hidden" name="menh1" value="@ViewBag.Menh1">
+
+                                    <input type="hidden" name="giainghia1" value="@ViewBag.GiaiNghia1">
+
+                                    <input type="hidden" name="cungmenh1" value="@ViewBag.CungMenh1">
+
+                                    <input type="hidden" name="nienmenh1" value="@ViewBag.NienMenh1">
+
+                                    <input type="hidden" name="tutrach1" value="@ViewBag.TuTrach1">
+
+                                    <input type="hidden" name="namsinh2" value="@ViewBag.day2 tháng @ViewBag.month2 năm @ViewBag.namAL2">
+
+                                    <input type="hidden" name="gioitinh2" value="@ViewBag.gender2">
+
+                                    <input type="hidden" name="menh2" value="@ViewBag.Menh2">
+
+                                    <input type="hidden" name="giainghia2" value="@ViewBag.GiaiNghia2">
+
+                                    <input type="hidden" name="cungmenh2" value="@ViewBag.CungMenh2">
+
+                                    <input type="hidden" name="nienmenh2" value="@ViewBag.NienMenh2">
+
+                                    <input type="hidden" name="tutrach2" value="@ViewBag.TuTrach2">
+
+                                    <input type="hidden" name="diemnguhanh" value="@ViewBag.DiemNguHanh">
+
+                                    <input type="hidden" name="diemtutrach" value="@ViewBag.DiemTuTrach">
+                                    <input type="hidden" name="chenhlech" value="@ViewBag.ChenhLech">
+                                    <input type="hidden" name="diemtuoi" value="@ViewBag.DiemTuoi">
+                                    <input type="hidden" name="diem" value="@ViewBag.Point">
+
+                                    
+                                </form>
+                            </div>
+                            <div id="tuoidep" class="collapse">
+                                <br />
+                                <center><h3>MỘT SỐ TUỔI ĐẸP VỚI BẠN</h3></center>
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Năm</th>
+                                            <th>Ngũ Hành</th>
+                                            <th>Tứ Trạch</th>
+                                            <th>Chênh Lệch</th>
+                                            <th>Điểm</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td><span style="color:blue">@item.namSinhB</span></td>
+                                                <td>@item.nguHanhA - @item.nguHanhB => @item.nguHanhHop <br />(<span style="color:blue">@item.diemNguHanh điểm</span>)</td>
+                                                <td>@item.tuTrachA - @item.tuTrachB => @item.tuTrachHop <br />(<span style="color:blue">@item.diemTuTrach điểm</span>)</td>
+                                                <td>@ViewBag.namAL1 - @item.amLichB lệch @item.chenhLech tuổi <br />(<span style="color:blue">@item.diemTuoi điểm</span>)</td>
+                                                <td><span style="color:red">@item.diemTong</span></td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=1567232153295149";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+
+
+        </script>
+        <div class="copyright">
+            <div class="container">
+                <p>© 2016 TuViGiaDao. All rights reserved. </p>
+            </div>
+        </div>
+
+    </body>
+</html>

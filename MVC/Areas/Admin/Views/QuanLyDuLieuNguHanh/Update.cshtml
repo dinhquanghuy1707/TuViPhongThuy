@@ -1,0 +1,97 @@
+﻿@model PagedList.IPagedList<MVC.Models.NguHanh>
+@using PagedList.Mvc;
+@using MVC.Models
+@{
+    ViewBag.Title = "QuanLyDuLieuNguHanh";
+    Layout = "~/Areas/Admin/Views/Shared/_layout.cshtml";
+    TuViPhongThuyContext db = new TuViPhongThuyContext();
+    int nam = 0;
+    try
+    {
+
+        nam = int.Parse(this.Request.QueryString["Nam"]);
+    }
+    catch (Exception)
+    { }
+    var objs = from table in db.NguHanhs
+               where table.namDL == nam
+               select table;
+}
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    DỮ LIỆU NGŨ HÀNH
+                </h1>
+                <ol class="breadcrumb">
+                    <li>
+                        <i class="fa fa-fw fa-desktop"></i>  <a href="index.html">Trang Quản Lý</a>
+                    </li>
+                    <li class="active">
+                        <i class="fa fa-fw fa-edit"></i> Dữ Liệu Ngũ Hành
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h4>
+                            CHỈNH SỬA DỮ LIỆU NGŨ HÀNH
+                        </h4>
+                        <form role="form" action="~/Admin/QuanLyDuLieuNguHanh/UpdateData" method="post">
+                            @foreach (var item in objs)
+                            {
+                                <div class="form-group">
+                                    <label>Năm: @nam</label>
+                                </div>
+                                <input type="hidden" name="namDL" value=@nam />
+                                <div class="form-group">
+                                    <label>Năm Âm Lịch</label>
+                                    <input class="form-control" name="namAmLich" value=@item.namAL>
+                                </div>
+                                <div class="form-group">
+                                    <label>Giải Nghĩa</label>
+                                    <input class="form-control" name="giaiNghia" value=@item.GiaiNghia>
+                                </div>
+                                <div class="form-group">
+                                    <label>	Cung Nam</label>
+                                    <input class="form-control" name="cungNam" value=@item.CungNam>
+                                </div>
+                                <div class="form-group">
+                                    <label>Mệnh Nam</label>
+                                    <input class="form-control" name="menhNam" value=@item.NienMenhNam>
+                                </div>
+                                <div class="form-group">
+                                    <label>	Cung Nữ</label>
+                                    <input class="form-control" name="cungNu" value=@item.CungNu>
+                                </div>
+                                <div class="form-group">
+                                    <label>	Mệnh Nữ</label>
+                                    <input class="form-control" name="menhNu" value=@item.NienMenhNu>
+                                </div>
+                                <div class="form-group">
+                                    <label>	Ngũ Hành Năm Sinh</label>
+                                    <input class="form-control" name="nguHanhNamSinh" value=@item.NguHanhNamSinh>
+                                </div>
+                                <div class="form-group">
+                                    <label>	Tên Ngũ Hành</label>
+                                    <input class="form-control" name="tenNguHanh" value=@item.TenNguHanh>
+                                </div>
+                            }
+                            <button type="submit" name="btnSubmit" class="btn btn-default">Xác Nhận</button>
+                            <button type="reset" class="btn btn-default">Hủy Bỏ</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /#page-wrapper -->
+
+        </div>
+    </div>
+</div>

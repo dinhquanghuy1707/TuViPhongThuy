@@ -1,0 +1,74 @@
+﻿@model PagedList.IPagedList<MVC.Models.TaiLieu>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "QuanLyTaiLieu";
+    Layout = "~/Areas/Admin/Views/Shared/_layout.cshtml";
+
+}
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    QUẢN LÝ TÀI LIỆU
+                </h1>
+                <ol class="breadcrumb">
+                    <li>
+                        <i class="fa fa-fw fa-desktop"></i>  <a href="index.html">Trang Quản Lý</a>
+                    </li>
+                    <li class="active">
+                        <i class="fa fa-fw fa-file"></i> Quản Lý Tài Liệu
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a href="/Admin/QuanLyTaiLieu/Insert">>> Thêm mới tài liệu <<</a>
+                    </div>
+                </div>
+                <!-- /.row -->
+                <div class="row">
+                    @*<div class="col-lg-6">*@
+                    <h4>DANH SÁCH TÀI LIỆU</h4>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Mã Tài Liệu</th>
+                                    <th>Chủ Đề</th>
+                                    <th>Link Ảnh</th>
+                                    <th>Ngày Đăng</th>
+                                    <th>Người Đăng</th>
+                                    <th>Hành Động</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.MaTaiLieu</td>
+                                        <td>@item.ChuDe</td>
+                                        <td>@item.LinkAnh</td>
+                                        <td>@item.NgayDang</td>
+                                        <td>@item.TenNguoiDang</td>
+                                        <td>@Html.ActionLink("Xóa", "Delete", new { @item.MaTaiLieu }, new { onclick = "return confirm('Bạn thực sự muốn xóa thông tin bản ghi này?')" })</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <center>@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))</center>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.row -->
+        </div>
+    </div>
+    <!-- /#page-wrapper -->
+</div>

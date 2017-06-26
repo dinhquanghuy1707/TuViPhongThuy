@@ -1,0 +1,155 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+  
+    <title>Tử Vi Gia Đạo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Business_Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="applijewelleryion/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href="/Assets/Homepage/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <!-- Custom Theme files -->
+    <link href='/Assets/Homepage/fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
+    <link href='/Assets/Homepage/fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="/Assets/Homepage/css/style.css" rel='stylesheet' type='text/css' />
+    <script src="/Assets/Homepage/js/jquery-1.11.1.min.js"></script>
+    <script src="/Assets/Homepage/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <!--start-main-->
+    <div class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="logo">
+                    <a href="~/Guest/Home/Index"><h1>TỬ VI GIA ĐẠO</h1></a>
+                </div>
+                <div class="search">
+                    <form role="form" action="~/Guest/TaiLieu/Search" method="get">
+                        <input type="text" value="Search" name="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+                        <input type="submit" value="">
+                    </form>
+                </div>
+                <div class="social">
+                    <ul>
+                        <li><a href="#" class="facebook"> </a></li>
+                        <li><a href="#" class="facebook twitter"> </a></li>
+                        <li><a href="#" class="facebook chrome"> </a></li>
+                        <li><a href="#" class="facebook in"> </a></li>
+                        <li><a href="#" class="facebook beh"> </a></li>
+                        <li><a href="#" class="facebook vem"> </a></li>
+                        <li><a href="#" class="facebook yout"> </a></li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <!--head-bottom-->
+        <div class="head-bottom">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="~/Guest/Home/Index">TRANG CHỦ</a></li>
+                        <li><a href="~/Guest/XemPhongThuy/Index">HƯỚNG NHÀ</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">TÌNH DUYÊN <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li class="active"><a href="~/Guest/TinhDuyen/Index">Tình Duyên</a></li>
+                                <li><a href="~/Guest/GhepDoiTinhDuyen/Index">Ghép Đôi</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="~/Guest/LichAmDuong/Index">LỊCH ÂM DƯƠNG</a></li>
+                        <li><a href="~/Guest/TaiLieu/Index">TÀI LIỆU PHONG THỦY</a></li>
+                        <li><a href="~/Guest/GioiThieu/Index">GIỚI THIỆU</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+        <!--head-bottom-->
+    </div>
+    <!-- banner -->
+    <div class="technology-1">
+        <div class="container">
+            <div class="business">
+                <div id="contact" class="contact">
+                    <h3>TÌNH DUYÊN</h3>
+                    <b>"Yêu đúng người vào đúng thời điểm là một may mắn! Yêu đúng người nhưng sai thời điểm là muôn đời nuối tiếc! Chọn sai người vào đúng thời điểm là đại họa!"</b>
+                    Trong đời người, ai cũng hy vọng hôn nhân của mình được viên mãn, vui vẻ hạnh phúc. Từ xưa đến nay, hôn nhân đóng vai trò chủ yếu trong đời sống của nhân loại.
+                    Bất luận như thế nào thì vấn đề hợp khắc trong hôn nhân cũng luôn là vấn đề được nhiều người quan tâm. Hãy xem bạn và người ấy kết hợp với nhau sẽ như thế nào nhé!<br /><br />
+                    <b>Hướng dẫn xem tình duyên của hai bạn:</b> <br>
+                    - Nhập ngày tháng năm sinh của bạn (Dương lịch)<br>
+                    - Nhập ngày tháng năm sinh của người ấy (Dương lịch)<br>
+                    - Nhấn nút <b>Xem Kết Quả</b> để xem kết quả tình duyên hai bạn.<br />
+                    <form action="~/Guest/TinhDuyen/submit" method="get">
+                        <center>
+                            <label> &nbsp &nbsp Chọn tuổi bạn</label>&nbsp &nbsp &nbsp
+                            <input type="date" id="bday1" name="bday1" >
+                            <input type="radio" id="gender1" name="gender1" value="Nam" checked> Nam
+                            <input type="radio" name="gender1" value="Nữ"> Nữ<br><br>
+
+                            <label>Chọn tuổi người ấy</label>
+                            <input type="date"id="bday2" name="bday2">
+                            <input type="radio"id="gender2" name="gender2" value="Nam"> Nam
+                            <input type="radio" name="gender2" value="Nữ" checked> Nữ<br><br />
+                            
+                            <b>  <input class="input btn btn-primary" type="button" onclick="clic(this)" value="Xem Kết Quả"> </b> <br><br>
+
+                        </center>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix">
+        </div>
+    </div>
+
+    <div class="copyright">
+        <div class="container">
+            <p>© 2016 TuViGiaDao. All rights reserved. </p>
+        </div>
+    </div>
+    <script>
+
+
+        function clic(element) {
+            var e = document.getElementById("bday1");
+            var e2 = document.getElementById("gender1");
+            var e3 = document.getElementById("bday2");
+            var e4 = document.getElementById("gender2");
+            var datestr1 = e.value;
+            var datestr2 = e3.value;
+            var genstr1 = "N%E1%BB%AF";
+            var genstr2 = "N%E1%BB%AF";
+            if (document.getElementById("gender1").checked) genstr1 = "Nam";
+            if (document.getElementById("gender2").checked) genstr2 = "Nam";
+                
+            if (!document.getElementById("bday2").value) {
+                alert("Nhập Ngày Sinh Hợp Lệ !");
+            }
+            else {
+                if (!document.getElementById("bday1").value)
+                    alert("Nhập Ngày Sinh Hợp Lệ !");
+                else {
+                    window.location.href = "submit?bday1=" + datestr1 + "&gender1=" + genstr1 + "&bday2=" + datestr2 + "&gender2=" + genstr2;
+
+                }
+            }
+
+        }
+    </script>
+</body>
+</html>
+

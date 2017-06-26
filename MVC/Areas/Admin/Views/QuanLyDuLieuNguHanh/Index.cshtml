@@ -1,0 +1,107 @@
+﻿@model PagedList.IPagedList<MVC.Models.NguHanh>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "QuanLyDuLieuNguHanh";
+    Layout = "~/Areas/Admin/Views/Shared/_layout.cshtml";
+
+}
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    DỮ LIỆU NGŨ HÀNH
+                </h1>
+                <ol class="breadcrumb">
+                    <li>
+                        <i class="fa fa-fw fa-desktop"></i>  <a href="index.html">Trang Quản Lý</a>
+                    </li>
+                    <li class="active">
+                        <i class="fa fa-fw fa-edit"></i> Dữ Liệu Ngũ Hành
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a href="/Admin/QuanLyDuLieuNguHanh/Insert">>> Thêm mới dữ liệu <<</a>
+                    </div>
+                </div>
+                <!-- /.row -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h4>DỮ LIỆU NGŨ HÀNH TỪ DATABASE</h4>
+                        <div class="table-responsive">
+
+                            @*<form action="~/Admin/QuanLyDuLieuNguHanh/Submit" method="get">*@
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Năm </th>
+                                        <th>Năm Âm Lịch</th>
+                                        <th>Giải Nghĩa</th>
+                                        <th>Cung Nam</th>
+                                        <th>Mệnh Nam</th>
+                                        <th>Cung Nữ</th>
+                                        <th>Mệnh Nữ</th>
+                                        <th>Ngũ Hành Năm Sinh</th>
+                                        <th>Tên Ngũ Hành</th>
+                                        <th>Hành Động</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr id="row_@item.namDL">
+                                            <td>@item.namDL</td>
+                                            <td>@item.namAL</td>
+                                            <td>@item.GiaiNghia</td>
+                                            <td>@item.CungNam</td>
+                                            <td>@item.NienMenhNam</td>
+                                            <td>@item.CungNu</td>
+                                            <td>@item.NienMenhNu</td>
+                                            <td>@item.NguHanhNamSinh</td>
+                                            <td>@item.TenNguHanh</td>
+                                            <td>
+                                                <a href="/Admin/QuanLyDuLieuNguHanh/Update?Nam=@item.namDL">Sửa</a>&nbsp;&nbsp;
+                                                @*@Ajax.ActionLink("Xóa", "Delete", new { @item.namDL }, new AjaxOptions
+                                                    {
+                                                        Confirm = "Bạn có muốn xóa bản ghi này?",
+                                                        OnComplete = "$('#row_" + @item.namDL + "').remove()",
+                                                        HttpMethod = "Delete"
+                                                    })*@
+                                                @Html.ActionLink("Xóa","Delete", new { @item.namDL },new { onclick = "return confirm('Bạn thực sự muốn xóa thông tin bản ghi này?')" })
+
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+
+                            </table>
+                            <center>@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))</center>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /#page-wrapper -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function Submit() {
+        if (confirm("Are you sure you want to submit ?")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+</script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
