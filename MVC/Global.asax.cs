@@ -15,7 +15,7 @@ namespace MVC
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-
+           //dsadasdas
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
