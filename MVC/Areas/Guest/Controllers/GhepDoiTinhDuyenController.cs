@@ -214,11 +214,11 @@ namespace MVC.Areas.Guest.Controllers
         {
             string imageURL=PostID;
             WebClient wc = new WebClient();
-            byte[] originalData = wc.DownloadData("https://graph.facebook.com/"+FbId+"/picture?height=200");
+            byte[] originalData = wc.DownloadData("https://graph.facebook.com/" + FbId + "/picture?height=200&type=square");
             MemoryStream stream = new MemoryStream(originalData);
             Bitmap myBitmapLogo = new Bitmap(stream);
 
-            //byte[] originalData2 = wc.DownloadData("https://graph.facebook.com/1508511446100036/picture?height=200");
+            //byte[] originalData2 = wc.DownloadData("https://graph.facebook.com/1508511446100036/picture?height=200&type=square");
             //MemoryStream stream2 = new MemoryStream(originalData2);
             //Bitmap myBitmapLogo2 = new Bitmap(stream2);
 
