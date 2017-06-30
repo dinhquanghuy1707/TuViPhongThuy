@@ -568,7 +568,7 @@ namespace MVC.Areas.Guest.Controllers
             if (gender1 == "Nam")
             {
                 gioiTinhB = "Nữ";
-                for (int i = namSinhA - 12; i <= namSinhA + 2; i++)
+                for (int i = namSinhA - 2; i <= namSinhA + 12; i++)
                 {
                     person ketQua = ketquahaptuoi(namSinhA, nguHanhA, tuTrachA, i, gioiTinhB);
                     if (ketQua.diemTong >= 6)
@@ -580,7 +580,7 @@ namespace MVC.Areas.Guest.Controllers
             else
             {
                 gioiTinhB = "Nam";
-                for (int i = namSinhA - 2; i <= namSinhA + 12; i++)
+                for (int i = namSinhA - 12; i <= namSinhA + 2; i++)
                 {
                     person ketQua = ketquahaptuoi(namSinhA, nguHanhA, tuTrachA, i, gioiTinhB);
                     if (ketQua.diemTong >= 6)

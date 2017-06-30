@@ -104,7 +104,13 @@
                         <ul class="nav navbar-nav">
                             <li><a href="~/Guest/Home/Index">TRANG CHỦ</a></li>
                             <li><a href="~/Guest/XemPhongThuy/Index">HƯỚNG NHÀ</a></li>
-                            <li class="active"><a href="~/Guest/TinhDuyen/Index">TÌNH DUYÊN</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">TÌNH DUYÊN <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li class="active"><a href="~/Guest/TinhDuyen/Index">Tình Duyên</a></li>
+                                    <li><a href="~/Guest/GhepDoiTinhDuyen/Index">Ghép Đôi</a></li>
+                                </ul>
+                            </li>
                             <li><a href="~/Guest/LichAmDuong/Index">LỊCH ÂM DƯƠNG</a></li>
                             <li><a href="~/Guest/TaiLieu/Index">TÀI LIỆU PHONG THỦY</a></li>
                             <li><a href="~/Guest/GioiThieu/Index">GIỚI THIỆU</a></li>
@@ -131,14 +137,31 @@
                         </div>
                         <div class="col-lg-8 col-lg-offset-2">
                             <div class="col-lg-4">
+                                <br />
                                 <button type="button" data-toggle="collapse" data-target="#detail" class="btn btn-primary btn-block">XEM CHÚ GIẢI</button>
+                                <br />
+                             </div>
+                            <div class="col-lg-4">
+                                <br />
+                                <center>
+                                    <div class="fb-share-button"
+                                         data-href="@ViewBag.url"
+                                         data-layout="button"
+                                         data-size="large"
+                                         data-mobile-iframe="true"
+                                         title="Send To Facebook !"
+                                         redirect_uri="http://tuvigiadao.com/Guest/TinhDuyen/Index">
+                                    </div>
+                                </center>
+                                <br />
                             </div>
                             <div class="col-lg-4">
+                                <br />
                                 <button type="button" data-toggle="collapse" data-target="#tuoidep" class="btn btn-primary btn-block">GỢI Ý TUỔI ĐẸP</button>
                             </div>
-                            <div class="col-lg-4">
+                            @*<div class="col-lg-4">
                                 <button type="button" data-toggle="collapse" data-target="#" class="btn btn-primary btn-block">XEM TUỔI BẠN BÈ</button>
-                            </div>
+                            </div>*@
                         </div>
                         <div class="col-lg-8 col-lg-offset-2">
                             <div id="detail" class="collapse">
@@ -203,18 +226,6 @@
                                         <td><span style="color: red">@ViewBag.DiemTuoi</span> /2</td>
                                     </tr>
                                 </table>
-                                <br />
-                                <center>
-                                    <div class="fb-share-button"
-                                         data-href="@ViewBag.url"
-                                         data-layout="button"
-                                         data-size="large"
-                                         data-mobile-iframe="true"
-                                         title="Send To Facebook !"
-                                         redirect_uri="http://tuvigiadao.com/Guest/TinhDuyen/Index">
-                                    </div>
-                                </center>
-                                <br />
                                 <form action="~/Guest/fb/shareTD" method="post">
 
                                     <input type="hidden" name="namsinh1" value="@ViewBag.day1 tháng @ViewBag.month1 năm @ViewBag.namAL1">
