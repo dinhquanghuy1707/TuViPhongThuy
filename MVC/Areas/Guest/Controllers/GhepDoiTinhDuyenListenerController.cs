@@ -256,7 +256,7 @@ namespace MVC.Areas.Guest.Controllers
             ViewBag.month2 = lnd2.Month;
             /// object 1
             ViewBag.yearAL1 = lnd1.Year;
-            int namSinhA = lnd1.Year;
+            
             // Đổi âm dương
             while (lnd1.Year > 2009) lnd1.Year = lnd1.Year - 60;
             while (lnd1.Year < 1950) lnd1.Year = lnd1.Year + 60;
@@ -560,12 +560,13 @@ namespace MVC.Areas.Guest.Controllers
 
 
             // Tìm những người hợp tuổi với người chơi, điều kiện kết quả >=6
-            string nguHanhA = ViewBag.NguHanh1;
-            string tuTrachA = ViewBag.TuTrach1;
+            int namSinhA = lnd2.Year;
+            string nguHanhA = ViewBag.NguHanh2;
+            string tuTrachA = ViewBag.TuTrach2;
             string gioiTinhB = "";
 
             List<person> list2 = new List<person>();
-            if (gender1 == "Nam")
+            if (gender2 == "Nam")
             {
                 gioiTinhB = "Nữ";
                 for (int i = namSinhA - 2; i <= namSinhA + 12; i++)
