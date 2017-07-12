@@ -552,21 +552,15 @@ namespace MVC.Areas.Guest.Controllers
                 }
             }
             ViewBag.decription = nameobj2 + " và " + nameobj1 + "hợp nhau " + Point + "/10 - còn bạn thì sao ? - Xem Bói Tính Duyên";
-          
-
-
-            //
-
-
-
+           
             // Tìm những người hợp tuổi với người chơi, điều kiện kết quả >=6
-            int namSinhA = lnd2.Year;
-            string nguHanhA = ViewBag.NguHanh2;
-            string tuTrachA = ViewBag.TuTrach2;
+            int namSinhA = lnd1.Year;
+            string nguHanhA = ViewBag.NguHanh1;
+            string tuTrachA = ViewBag.TuTrach1;
             string gioiTinhB = "";
 
             List<person> list2 = new List<person>();
-            if (gender2 == "Nam")
+            if (gender1 == "Nam")
             {
                 gioiTinhB = "Nữ";
                 for (int i = namSinhA - 2; i <= namSinhA + 12; i++)
