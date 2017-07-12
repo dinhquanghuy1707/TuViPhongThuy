@@ -223,7 +223,7 @@ namespace MVC.Areas.Guest.Controllers
             string image1 = Res.Image;
             string IdPost = Res.IdPost;
             //
-
+            ViewBag.Image2 = "http://tuvigiadao.com/Assets/Homepage/images/GhepDoiTinhDuyenPost/"+ IdRes + ".jpg";
 
             Pos = db.GhepDoiTinhDuyenPosts.Where(s => s.IdPost == IdPost).FirstOrDefault();
             string nameobj2 = Pos.Name;
