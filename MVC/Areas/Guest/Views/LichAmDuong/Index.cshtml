@@ -24,7 +24,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 
 <body>
-  
+
     <!--start-main-->
     <div class="header">
         <div class="header-top">
@@ -71,7 +71,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">TÌNH DUYÊN <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li ><a href="~/Guest/TinhDuyen/Index">Tình Duyên</a></li>
+                                <li><a href="~/Guest/TinhDuyen/Index">Tình Duyên</a></li>
                                 <li><a href="~/Guest/GhepDoiTinhDuyen/Index">Ghép Đôi</a></li>
                             </ul>
                         </li>
@@ -93,28 +93,35 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <h3>LỊCH ÂM DƯƠNG</h3>
                     <div class="grid_3 grid_5">
                         <div class="col-md-6">
-                            <center>    
+                            <center>
                                 <a name="amlich"></a>
                                 <script language="JavaScript" src="~/Scripts/amlich.js" type="text/javascript"></script>
                                 <script language="JavaScript">showVietCal();</script>
                                 <script language="JavaScript">setOutputSize("large"); document.writeln(printSelectedMonth());</script>
                             </center>
                         </div>
+                        @*<div class="col-md-6">
+
+                                    <center>
+                                        <label>CHUYỂN ĐỔI LỊCH</label><br><br>
+                                        - Chọn ngày, tháng, năm cần đổi (Dương Lịch).<br />
+                                        - Nhấn nút <b>Đổi Ngày</b> để đổi lịch.<br>
+                                        <input type="date" id="bday" name="bday"><br><br>
+                                        <input class="input btn btn-primary" type="button" onclick="clic(this)" value="Đổi Ngày"> <br><br>
+                                        <label id="showday"></label>
+                                    </center>
+                            </div>*@
                         <div class="col-md-6">
-                     
-                                <center>
-                                    <label>CHUYỂN ĐỔI LỊCH</label><br><br>
-                                    - Chọn ngày, tháng, năm cần đổi (Dương Lịch).<br />
-                                    - Nhấn nút <b>Đổi Ngày</b> để đổi lịch.<br>
-                                    <input type="date" id="bday" name="bday"><br><br> @*Ngày được chọn*@
-
-                                 
-                                    <input class="input btn btn-primary" type="button" onclick="clic(this)" value="Đổi Ngày"> <br><br>
-                                 
-                                    <label id="showday"></label>
-                                </center>
-               
-
+                            <center>
+                                <label>CHUYỂN ĐỔI LỊCH</label><br>
+                                - Chọn <b>thời gian</b> và <b>loại lịch</b> tương ứng cần đổi.<br>
+                                - Nhấn <b>Đổi Ngày</b> để xem kết quả.<br /><br />
+                                <input type="date" value="2017-01-01" id="bday" name="bday"><br />
+                                <input type="radio" id="gender1" name="gender1" value="DA" checked><b>Dương sang Âm</b>
+                                <input type="radio" name="gender1" value="AD"><b>Âm sang Dương</b><br><br>
+                                <input class="input btn btn-primary" type="button" onclick="clic(this)" value=" Đổi Ngày"> <br><br>
+                                <div id="KetQua"></div>
+                            </center>
                         </div>
                         <div class="clearfix"> </div>
                     </div>
@@ -129,25 +136,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <p>© 2016 TuViGiaDao. All rights reserved. </p>
         </div>
     </div>
-    <script>
+    <script type="text/javascript">
         function clic(element) {
-            var e = document.getElementById("bday");
-            var e2 = document.getElementById("showday");
-            var datestr = e.value;
-        //    var gender = e2.value;
-            var inData = { bday: datestr };
-            var url = "/Guest/LichAmDuong/DoiLich";
-            $.getJSON(url, inData, function (data) {
-                e2.innerHTML = data;
+            $(function () {
+                if (!document.getElementById("bday").value) {
+                    alert("Vui Lòng Chọn Ngày Trước Khi Đổi!");
+                }
+                else {
+                    var e = document.getElementById("bday");
+                    var kieu = "";
+                    if (document.getElementById("gender1").checked) kieu = "DA";
+                    else kieu = "AD";
 
+                    var url = '@Url.Action("Student", "LichAmDuong")';
+                    $.get(url, { ngay: "" + e.value, kieu: "" + kieu }, function (response) {
+                        $("#KetQua").html(response);
+                    });
+                }
             });
-
         }
     </script>
 </body>
 </html>
-   
-  
-
-
-
