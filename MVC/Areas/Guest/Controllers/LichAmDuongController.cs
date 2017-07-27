@@ -59,14 +59,18 @@ namespace MVC.Areas.Guest.Controllers
                 if ((dt.Year % 400 == 0) || (dt.Year % 4 == 0 && dt.Year % 100 != 0))
                     leap = true;
                 else
-                    leap = false;
-
-                AmLich.LunarDate lnd = new AmLich.LunarDate(dt.Day, dt.Month, dt.Year, leap);
+                    leap = true;
+                AmLich.LunarDate lnd = new AmLich.LunarDate();
+                lnd.Day = dt.Day;
+                lnd.Month = dt.Month;
+                lnd.Year = dt.Year;
+                lnd.IsLeapYear = leap;
+             //   AmLich.LunarDate lnd = new AmLich.LunarDate(dt.Day, dt.Month, dt.Year, leap);
                 DateTime duonglich = AmLich.LunarYearTools.LunarToSolar(lnd);
                // AmLich.LunarDate lnd = new AmLich.LunarDate();
                // lnd = AmLich.LunarDate.(dt);
                // data = "Là ngày " + lnd.Day + " tháng " + lnd.Month + " năm " + lnd.Year;
-                data = "Là ngày " + duonglich.Day + " tháng " + duonglich.Month + " năm " + duonglich.Year +" (Dương Lịch)";
+                data = "Là ngày " + duonglich.Day  + " tháng " + duonglich.Month+ " năm " + duonglich.Year +" (Dương Lịch)";
             }
            
             return Content(data);
